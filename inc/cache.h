@@ -17,56 +17,56 @@ extern uint32_t PAGE_TABLE_LATENCY, SWAP_LATENCY;
 #define IS_LLC  6
 
 // INSTRUCTION TLB
-#define ITLB_SET 16
-#define ITLB_WAY 8
+#define ITLB_SET 1024
+#define ITLB_WAY 1024
 #define ITLB_RQ_SIZE 16
 #define ITLB_WQ_SIZE 16
 #define ITLB_PQ_SIZE 0
 #define ITLB_MSHR_SIZE 8
-#define ITLB_LATENCY 1
+#define ITLB_LATENCY 0
 
 // DATA TLB
-#define DTLB_SET 16
-#define DTLB_WAY 4
-#define DTLB_RQ_SIZE 16
-#define DTLB_WQ_SIZE 16
+#define DTLB_SET 1024
+#define DTLB_WAY 1024
+#define DTLB_RQ_SIZE 32
+#define DTLB_WQ_SIZE 32
 #define DTLB_PQ_SIZE 0
 #define DTLB_MSHR_SIZE 8
 #define DTLB_LATENCY 1
 
 // SECOND LEVEL TLB
-#define STLB_SET 128
-#define STLB_WAY 12
+#define STLB_SET 1024
+#define STLB_WAY 1024
 #define STLB_RQ_SIZE 32
 #define STLB_WQ_SIZE 32
 #define STLB_PQ_SIZE 0
 #define STLB_MSHR_SIZE 16
-#define STLB_LATENCY 8
+#define STLB_LATENCY 0
 
 // L1 INSTRUCTION CACHE
 #define L1I_SET 64
 #define L1I_WAY 8
 #define L1I_RQ_SIZE 64
 #define L1I_WQ_SIZE 64
-#define L1I_PQ_SIZE 8
+#define L1I_PQ_SIZE 32
 #define L1I_MSHR_SIZE 8
-#define L1I_LATENCY 1
+#define L1I_LATENCY 4
 
 // L1 DATA CACHE
 #define L1D_SET 64
-#define L1D_WAY 8
+#define L1D_WAY 12
 #define L1D_RQ_SIZE 64
 #define L1D_WQ_SIZE 64
 #define L1D_PQ_SIZE 8
 #define L1D_MSHR_SIZE 16
-#define L1D_LATENCY 4
+#define L1D_LATENCY 5
 
 // L2 CACHE
-#define L2C_SET 512
+#define L2C_SET 1024
 #define L2C_WAY 8
 #define L2C_RQ_SIZE 32
 #define L2C_WQ_SIZE 32
-#define L2C_PQ_SIZE 32
+#define L2C_PQ_SIZE 16
 #define L2C_MSHR_SIZE 32
 #define L2C_LATENCY 10  // 5 (L1I or L1D) + 10 = 14 cycles
 
