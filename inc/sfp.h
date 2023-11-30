@@ -53,12 +53,12 @@ class SFP_prefetcher : public Prefetcher {
         // Spatial Footprint History Table
         // Used to store the previously recorded footprints.
         // Each entry consists of one (or more, depends on the configuration) of the previously saved footprints
-        static std::map<uint32_t, SHT_entry> SHT;
+        std::map<uint32_t, SHT_entry> SHT;
         // Active Sector Table
         // Used to record the footprint while a sector is active in the cache
         // Indexed by the sector address
-        static std::map<uint64_t, AST_entry> AST;
-        static std::queue<uint32_t> SHT_use_order; // queue used to keep track of least recently used SHT entry (the one to evict when table is full)
+        std::map<uint64_t, AST_entry> AST;
+        std::queue<uint32_t> SHT_use_order; // queue used to keep track of least recently used SHT entry (the one to evict when table is full)
 
 
         //  Fetches all blocks marked in the footprint of the given SHT entry
@@ -88,7 +88,7 @@ class SFP_prefetcher : public Prefetcher {
         void fetchRecovery(uint64_t sector, uint64_t addr, vector<uint64_t> &pref_addr);
     
         SFP_prefetcher(string type);
-        ~SFP_prefetcher();
+        ~SFP_prefetcher(){}
         void invoke_prefetcher(uint64_t pc, uint64_t address, uint8_t cache_hit, uint8_t type, vector<uint64_t> &pref_addr);
         void dump_stats();
         void print_config() {}

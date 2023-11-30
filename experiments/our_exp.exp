@@ -17,6 +17,6 @@ nopref                                          $(BASE) $(NOPREF)
 bingo                                           $(BASE) $(BINGO)
 pythia                                          $(BASE) $(PYTHIA)
 spt_v2						                    $(BASE) $(SPT_V2)
-spp_ppf_dev                                     $(BASE) $(SFP)
+sfp                                             $(BASE) $(SFP)
 
 
