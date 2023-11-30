@@ -1,0 +1,7 @@
+NAME=605.mcf_s-472B
+TRACE=$(PYTHIA_HOME)/traces/605.mcf_s-472B.champsimtrace.xz
+KNOBS=
+
+NAME=649.fotonik3d_s-1B
+TRACE=$(PYTHIA_HOME)/traces/649.fotonik3d_s-1B.champsimtrace.xz
+KNOBS=
