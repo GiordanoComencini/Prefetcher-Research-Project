@@ -19,6 +19,8 @@
 #include "ampm.h"
 #include "streamer.h"
 #include "pref_power7.h"
+#include "spt_v2.h"
+#include "sfp.h"
 
 using namespace std;
 
@@ -126,6 +128,18 @@ void CACHE::l2c_prefetcher_initialize()
 			cout << "adding L2C_PREFETCHER: AMPM" << endl;
 			AMPM *pref_ampm = new AMPM(knob::l2c_prefetcher_types[index]);
 			prefetchers.push_back(pref_ampm);
+		}
+		else if (!knob::l2c_prefetcher_types[index].compare("spt_v2"))
+		{
+			cout << "adding L2C_PREFETCHER: spt_v2" << endl;
+			spt_prefetcher *pref_spt_v2 = new spt_prefetcher(knob::l2c_prefetcher_types[index]);
+			prefetchers.push_back(pref_spt_v2);
+		}
+		else if (!knob::l2c_prefetcher_types[index].compare("sfp"))
+		{
+			cout << "adding L2C_PREFETCHER: SFP" << endl;
+			SFP_prefetcher *pref_sfp = new SFP_prefetcher(knob::l2c_prefetcher_types[index]);
+			prefetchers.push_back(pref_sfp);
 		}
 		else
 		{
