@@ -12,11 +12,12 @@ SPP_PPF_DEV = --l2c_prefetcher_types=spp_ppf_dev --config=$(PYTHIA_HOME)/config/
 PYTHIA = --l2c_prefetcher_types=scooby --config=$(PYTHIA_HOME)/config/pythia.ini
 SPT_V2 = --l2c_prefetcher_types=spt_v2 --config=$(PYTHIA_HOME)/config/spt_v2.ini
 SFP = --l2c_prefetcher_types=sfp --config=$(PYTHIA_HOME)/config/sfp.ini
+SP_GHB = --l2c_prefetcher_types=sp_ghb --config=$(PYTHIA_HOME)/config/sp_ghb.ini
 
 nopref                                          $(BASE) $(NOPREF)
 bingo                                           $(BASE) $(BINGO)
 pythia                                          $(BASE) $(PYTHIA)
 spt_v2						                    $(BASE) $(SPT_V2)
 sfp                                             $(BASE) $(SFP)
-
+sp_ghb                                          $(BASE) $(SP_GHB)
 
