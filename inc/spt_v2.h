@@ -21,16 +21,10 @@ class spt_prefetcher : public Prefetcher {
 
   void update(uint64_t ip, uint64_t cl_addr, int64_t stride)
   {
-    for (spt_entry entry : prediction_table) {
-      if (entry.tag() == ip) {
-        entry.last_cl_addr = cl_addr;
-        entry.previous_stride = stride;
-        entry.valid = 1;
-        break;
-      }
-    }
-    
-    
+    auto entry = std::find_if(prediction_table.begin(), prediction_table.end(), [ip](spt_entry& elem) { return elem.tag() == ip; });
+    entry->last_cl_addr = cl_addr;
+    entry->previous_stride = stride;
+    entry->valid = 1; 
   }
 
   void insert(uint64_t ip, uint64_t cl_addr)
@@ -49,28 +43,26 @@ class spt_prefetcher : public Prefetcher {
 public:
   void prefetch(uint64_t ip, uint64_t cl_addr, vector<uint64_t> &pref_addr)
   {
-    for (spt_entry entry: prediction_table) {
-      if (entry.tag() == ip) {
-        // for the one single entry that matches
-        int64_t stride = cl_addr - entry.last_cl_addr;
-        if(entry.valid){
-          if(stride != 0 && (static_cast<int64_t>(cl_addr)+stride >= 0)) {
-            uint64_t pf_address = static_cast<uint64_t>(cl_addr + stride);
-            // Only prefetch if address + stride goes outside of the current block
-            // and stride is different from previous stride or previous stride has not been saved (zero is default value)
-            if ((pf_address >> LOG2_BLOCK_SIZE) != (cl_addr >> LOG2_BLOCK_SIZE) && 
-                ((stride == entry.previous_stride) || entry.previous_stride != 0) ) 
-            {
-              pref_addr.push_back(pf_address);
-            } 
-          }
+    auto hit = std::find_if(prediction_table.begin(), prediction_table.end(), [ip](spt_entry& entry) { return entry.tag() == ip; });
+    if (hit != std::end(prediction_table)) {
+      // for the one single entry that matches
+      int64_t stride = static_cast<int64_t>(cl_addr) - static_cast<int64_t>(hit->last_cl_addr);
+      if(hit->valid){
+        if(stride != 0 && (static_cast<int64_t>(cl_addr)+stride >= 0)) {
+          uint64_t pf_address = static_cast<uint64_t>(cl_addr + stride);
+          // Only prefetch if address + stride goes outside of the current block
+          // and stride is different from previous stride or previous stride has not been saved (zero is default value)
+          if ((pf_address >> LOG2_BLOCK_SIZE) != (cl_addr >> LOG2_BLOCK_SIZE) && 
+              ((stride == hit->previous_stride) || hit->previous_stride != 0) ) 
+          {
+            pref_addr.push_back(pf_address);
+          } 
         }
-        update(ip, cl_addr, stride);
-      } else {
-        insert(ip, cl_addr);
       }
-      break;
-    }   
+      update(ip, cl_addr, stride);      
+    } else {
+      insert(ip, cl_addr);
+    }
     
   }
   private:
