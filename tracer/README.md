@@ -1,6 +1,6 @@
 # How to generate a trace
 
-1. Clone [this]([https://github.com/uchuhimo/]) repository in `~`.
+1. Clone [this](https://github.com/uchuhimo/pin-3.11-97998-g7ecce2dac-gcc-linux) repository in `~`.
 2. Go to the correct folder to build PIN: `cd ~/pin-3.11-97998-g7ecce2dac-gcc-linux/source/tools`
 3. Build PIN: `make`
 4. Export PIN root: `export PIN_ROOT=~/pin-3.11-97998-g7ecce2dac-gcc-linux`
