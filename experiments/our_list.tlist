@@ -5,3 +5,7 @@ KNOBS=
 NAME=649.fotonik3d_s-1B
 TRACE=$(PYTHIA_HOME)/traces/649.fotonik3d_s-1B.champsimtrace.xz
 KNOBS=
+
+NAME=MNIST_NN
+TRACE=$(PYTHIA_HOME)/traces/MNIST_NN.champsimtrace.xz
+KNOBS=
