@@ -1,0 +1,431 @@
+*************************************************
+   ChampSim Multicore Out-of-Order Simulator
+   Last compiled: Dec  3 2023 14:43:31
+*************************************************
+parsing config file: /home/pcineverdies/Projects/RM4ES/Prefetcher-Research-Project/config/nopref.ini
+
+trace_0 /home/pcineverdies/Projects/RM4ES/Prefetcher-Research-Project/traces/MNIST_NN.champsimtrace.xz
+adding L2C_PREFETCHER: NONE
+Initialize SHIP state
+warmup_instructions 100000
+simulation_instructions 50000000
+champsim_seed 646
+measure_ipc 0
+measure_ipc_epoch 1000
+measure_dram_bw 1
+measure_dram_bw_epoch 256
+measure_cache_acc 1
+measure_cache_acc_epoch 1024
+l1d_perfect 0
+l2c_perfect 0
+llc_perfect 0
+l1d_semi_perfect 0
+l2c_semi_perfect 0
+llc_semi_perfect 0
+semi_perfect_cache_page_buffer_size 64
+
+num_cpus 1
+cpu_freq 550
+dram_io_freq 2400
+page_size 4096
+block_size 64
+max_read_per_cycle 8
+max_fill_per_cycle 1
+dram_channels 1
+log2_dram_channels 0
+dram_ranks 1
+dram_banks 8
+dram_rows 65536
+dram_columns 128
+dram_row_size 8
+dram_size 4096
+dram_pages 1048576
+
+fetch_width 2
+decode_width 2
+exec_width 2
+lq_width 1
+sq_width 1
+retire_width 5
+scheduler_size 1
+branch_mispredict_penalty 1
+rob_size 256
+lq_size 72
+sq_size 56
+num_instr_destinations_sparc 4
+num_instr_destinations 2
+num_instr_sources 4
+
+itlb_set 1024
+itlb_way 1024
+itlb_rq_size 16
+itlb_wq_size 16
+itlb_pq_size 0
+itlb_mshr_size 8
+itlb_latency 0
+
+dtlb_set 1024
+dtlb_way 1024
+dtlb_rq_size 32
+dtlb_wq_size 32
+dtlb_pq_size 0
+dtlb_mshr_size 8
+dtlb_latency 1
+
+stlb_set 1024
+stlb_way 1024
+stlb_rq_size 32
+stlb_wq_size 32
+stlb_pq_size 0
+stlb_mshr_size 16
+stlb_latency 0
+
+l1i_size 32
+l1i_set 64
+l1i_way 8
+l1i_rq_size 64
+l1i_wq_size 64
+l1i_pq_size 32
+l1i_mshr_size 8
+l1i_latency 4
+
+l1d_size 48
+l1d_set 64
+l1d_way 12
+l1d_rq_size 64
+l1d_wq_size 64
+l1d_pq_size 8
+l1d_mshr_size 16
+l1d_latency 5
+
+l2c_size 512
+l2c_set 1024
+l2c_way 8
+l2c_rq_size 32
+l2c_wq_size 32
+l2c_pq_size 16
+l2c_mshr_size 32
+l2c_latency 10
+
+llc_size 2048
+llc_set 2048
+llc_way 16
+llc_rq_size 32
+llc_wq_size 32
+llc_pq_size 32
+llc_mshr_size 64
+llc_latency 20
+
+dram_channel_width 8
+dram_wq_size 64
+dram_rq_size 64
+tRP 15
+tRCD 15
+tCAS 12.5
+dram_dbus_turn_around_time 4
+dram_write_high_wm 56
+dram_write_low_wm 48
+min_dram_writes_per_switch 16
+dram_mtps 2400
+dram_dbus_return_time 1
+
+
+
+Warmup complete CPU  0 instructions:     100001 cycles:     136880 (Simulation time: 0 hr 0 min 0 sec) 
+
+Heartbeat CPU  0 instructions:    1000000 cycles:    9128989 heartbeat IPC: 0.10954 cumulative IPC: 0.10009 (Simulation time: 0 hr 0 min 2 sec) 
+Heartbeat CPU  0 instructions:    2000000 cycles:   19147292 heartbeat IPC: 0.09982 cumulative IPC: 0.09995 (Simulation time: 0 hr 0 min 4 sec) 
+Heartbeat CPU  0 instructions:    3000000 cycles:   28810838 heartbeat IPC: 0.10348 cumulative IPC: 0.10114 (Simulation time: 0 hr 0 min 6 sec) 
+Heartbeat CPU  0 instructions:    4000000 cycles:   38822122 heartbeat IPC: 0.09989 cumulative IPC: 0.10081 (Simulation time: 0 hr 0 min 9 sec) 
+Heartbeat CPU  0 instructions:    5000000 cycles:   48971508 heartbeat IPC: 0.09853 cumulative IPC: 0.10034 (Simulation time: 0 hr 0 min 12 sec) 
+Heartbeat CPU  0 instructions:    6000000 cycles:   59120920 heartbeat IPC: 0.09853 cumulative IPC: 0.10003 (Simulation time: 0 hr 0 min 14 sec) 
+Heartbeat CPU  0 instructions:    7000000 cycles:   69270252 heartbeat IPC: 0.09853 cumulative IPC: 0.09981 (Simulation time: 0 hr 0 min 17 sec) 
+Heartbeat CPU  0 instructions:    8000000 cycles:   79419595 heartbeat IPC: 0.09853 cumulative IPC: 0.09964 (Simulation time: 0 hr 0 min 20 sec) 
+Heartbeat CPU  0 instructions:    9000000 cycles:   89568829 heartbeat IPC: 0.09853 cumulative IPC: 0.09952 (Simulation time: 0 hr 0 min 23 sec) 
+Heartbeat CPU  0 instructions:   10000000 cycles:   99718012 heartbeat IPC: 0.09853 cumulative IPC: 0.09942 (Simulation time: 0 hr 0 min 26 sec) 
+Heartbeat CPU  0 instructions:   11000000 cycles:  109867245 heartbeat IPC: 0.09853 cumulative IPC: 0.09933 (Simulation time: 0 hr 0 min 30 sec) 
+Heartbeat CPU  0 instructions:   12000000 cycles:  120140738 heartbeat IPC: 0.09734 cumulative IPC: 0.09916 (Simulation time: 0 hr 0 min 33 sec) 
+Heartbeat CPU  0 instructions:   13000000 cycles:  130980073 heartbeat IPC: 0.09226 cumulative IPC: 0.09859 (Simulation time: 0 hr 0 min 37 sec) 
+Heartbeat CPU  0 instructions:   14000000 cycles:  141822898 heartbeat IPC: 0.09223 cumulative IPC: 0.09810 (Simulation time: 0 hr 0 min 40 sec) 
+Heartbeat CPU  0 instructions:   15000000 cycles:  152672494 heartbeat IPC: 0.09217 cumulative IPC: 0.09768 (Simulation time: 0 hr 0 min 44 sec) 
+Heartbeat CPU  0 instructions:   16000000 cycles:  163356768 heartbeat IPC: 0.09360 cumulative IPC: 0.09741 (Simulation time: 0 hr 0 min 47 sec) 
+Heartbeat CPU  0 instructions:   17000000 cycles:  174109062 heartbeat IPC: 0.09300 cumulative IPC: 0.09714 (Simulation time: 0 hr 0 min 51 sec) 
+Heartbeat CPU  0 instructions:   18000000 cycles:  184862203 heartbeat IPC: 0.09300 cumulative IPC: 0.09690 (Simulation time: 0 hr 0 min 54 sec) 
+Heartbeat CPU  0 instructions:   19000000 cycles:  195533074 heartbeat IPC: 0.09371 cumulative IPC: 0.09673 (Simulation time: 0 hr 0 min 58 sec) 
+Heartbeat CPU  0 instructions:   20000000 cycles:  206285300 heartbeat IPC: 0.09300 cumulative IPC: 0.09653 (Simulation time: 0 hr 1 min 1 sec) 
+Heartbeat CPU  0 instructions:   21000000 cycles:  217038066 heartbeat IPC: 0.09300 cumulative IPC: 0.09636 (Simulation time: 0 hr 1 min 5 sec) 
+Heartbeat CPU  0 instructions:   22000000 cycles:  227791164 heartbeat IPC: 0.09300 cumulative IPC: 0.09620 (Simulation time: 0 hr 1 min 8 sec) 
+Heartbeat CPU  0 instructions:   23000000 cycles:  238461534 heartbeat IPC: 0.09372 cumulative IPC: 0.09609 (Simulation time: 0 hr 1 min 12 sec) 
+Heartbeat CPU  0 instructions:   24000000 cycles:  249213835 heartbeat IPC: 0.09300 cumulative IPC: 0.09595 (Simulation time: 0 hr 1 min 15 sec) 
+Heartbeat CPU  0 instructions:   25000000 cycles:  259966933 heartbeat IPC: 0.09300 cumulative IPC: 0.09583 (Simulation time: 0 hr 1 min 19 sec) 
+Heartbeat CPU  0 instructions:   26000000 cycles:  270637724 heartbeat IPC: 0.09371 cumulative IPC: 0.09575 (Simulation time: 0 hr 1 min 23 sec) 
+Heartbeat CPU  0 instructions:   27000000 cycles:  281389958 heartbeat IPC: 0.09300 cumulative IPC: 0.09564 (Simulation time: 0 hr 1 min 26 sec) 
+Heartbeat CPU  0 instructions:   28000000 cycles:  292142733 heartbeat IPC: 0.09300 cumulative IPC: 0.09555 (Simulation time: 0 hr 1 min 30 sec) 
+Heartbeat CPU  0 instructions:   29000000 cycles:  302890382 heartbeat IPC: 0.09304 cumulative IPC: 0.09546 (Simulation time: 0 hr 1 min 33 sec) 
+Heartbeat CPU  0 instructions:   30000000 cycles:  313566150 heartbeat IPC: 0.09367 cumulative IPC: 0.09540 (Simulation time: 0 hr 1 min 36 sec) 
+Heartbeat CPU  0 instructions:   31000000 cycles:  324318460 heartbeat IPC: 0.09300 cumulative IPC: 0.09532 (Simulation time: 0 hr 1 min 40 sec) 
+Heartbeat CPU  0 instructions:   32000000 cycles:  335071601 heartbeat IPC: 0.09300 cumulative IPC: 0.09524 (Simulation time: 0 hr 1 min 43 sec) 
+Heartbeat CPU  0 instructions:   33000000 cycles:  345742260 heartbeat IPC: 0.09371 cumulative IPC: 0.09520 (Simulation time: 0 hr 1 min 46 sec) 
+Heartbeat CPU  0 instructions:   34000000 cycles:  356494480 heartbeat IPC: 0.09300 cumulative IPC: 0.09513 (Simulation time: 0 hr 1 min 50 sec) 
+Heartbeat CPU  0 instructions:   35000000 cycles:  367247374 heartbeat IPC: 0.09300 cumulative IPC: 0.09507 (Simulation time: 0 hr 1 min 53 sec) 
+Heartbeat CPU  0 instructions:   36000000 cycles:  377958341 heartbeat IPC: 0.09336 cumulative IPC: 0.09502 (Simulation time: 0 hr 1 min 56 sec) 
+Heartbeat CPU  0 instructions:   37000000 cycles:  388670665 heartbeat IPC: 0.09335 cumulative IPC: 0.09497 (Simulation time: 0 hr 1 min 59 sec) 
+Heartbeat CPU  0 instructions:   38000000 cycles:  399423094 heartbeat IPC: 0.09300 cumulative IPC: 0.09492 (Simulation time: 0 hr 2 min 3 sec) 
+Heartbeat CPU  0 instructions:   39000000 cycles:  410176235 heartbeat IPC: 0.09300 cumulative IPC: 0.09487 (Simulation time: 0 hr 2 min 6 sec) 
+Heartbeat CPU  0 instructions:   40000000 cycles:  420846828 heartbeat IPC: 0.09372 cumulative IPC: 0.09484 (Simulation time: 0 hr 2 min 9 sec) 
+Heartbeat CPU  0 instructions:   41000000 cycles:  431599099 heartbeat IPC: 0.09300 cumulative IPC: 0.09479 (Simulation time: 0 hr 2 min 12 sec) 
+Heartbeat CPU  0 instructions:   42000000 cycles:  442351955 heartbeat IPC: 0.09300 cumulative IPC: 0.09475 (Simulation time: 0 hr 2 min 15 sec) 
+Heartbeat CPU  0 instructions:   43000000 cycles:  453023021 heartbeat IPC: 0.09371 cumulative IPC: 0.09473 (Simulation time: 0 hr 2 min 18 sec) 
+Heartbeat CPU  0 instructions:   44000000 cycles:  463775247 heartbeat IPC: 0.09300 cumulative IPC: 0.09469 (Simulation time: 0 hr 2 min 21 sec) 
+Heartbeat CPU  0 instructions:   45000000 cycles:  474527668 heartbeat IPC: 0.09300 cumulative IPC: 0.09465 (Simulation time: 0 hr 2 min 24 sec) 
+Heartbeat CPU  0 instructions:   46000000 cycles:  485280855 heartbeat IPC: 0.09300 cumulative IPC: 0.09461 (Simulation time: 0 hr 2 min 26 sec) 
+Heartbeat CPU  0 instructions:   47000000 cycles:  495951335 heartbeat IPC: 0.09372 cumulative IPC: 0.09459 (Simulation time: 0 hr 2 min 29 sec) 
+Heartbeat CPU  0 instructions:   48000000 cycles:  506703613 heartbeat IPC: 0.09300 cumulative IPC: 0.09456 (Simulation time: 0 hr 2 min 32 sec) 
+Heartbeat CPU  0 instructions:   49000000 cycles:  517456568 heartbeat IPC: 0.09300 cumulative IPC: 0.09453 (Simulation time: 0 hr 2 min 34 sec) 
+Heartbeat CPU  0 instructions:   50000000 cycles:  528127491 heartbeat IPC: 0.09371 cumulative IPC: 0.09451 (Simulation time: 0 hr 2 min 37 sec) 
+Finished CPU 0 instructions: 50000000 cycles: 529065816 cumulative IPC: 0.09451 (Simulation time: 0 hr 2 min 37 sec) 
+
+ChampSim completed all CPUs
+
+[ROI Statistics]
+Core_0_instructions 50000000
+Core_0_cycles 529065816
+Core_0_IPC 0.09451
+
+Core_0_branch_prediction_accuracy 99.09397
+Core_0_branch_MPKI 0.54578
+Core_0_average_ROB_occupancy_at_mispredict 167.72029
+
+Core_0_L1D_total_access 23765163
+Core_0_L1D_total_hit 23595413
+Core_0_L1D_total_miss 169750
+Core_0_L1D_loads 19673481
+Core_0_L1D_load_hit 19510421
+Core_0_L1D_load_miss 163060
+Core_0_L1D_RFOs 4091682
+Core_0_L1D_RFO_hit 4084992
+Core_0_L1D_RFO_miss 6690
+Core_0_L1D_prefetches 0
+Core_0_L1D_prefetch_hit 0
+Core_0_L1D_prefetch_miss 0
+Core_0_L1D_writebacks 0
+Core_0_L1D_writeback_hit 0
+Core_0_L1D_writeback_miss 0
+Core_0_L1D_prefetch_requested 0
+Core_0_L1D_prefetch_dropped 0
+Core_0_L1D_prefetch_issued 0
+Core_0_L1D_prefetch_filled 0
+Core_0_L1D_prefetch_useful 0
+Core_0_L1D_prefetch_useless 0
+Core_0_L1D_prefetch_late 0
+Core_0_L1D_average_miss_latency 48.66262
+
+Core_0_L1D_rq_access 19673499
+Core_0_L1D_rq_forward 0
+Core_0_L1D_rq_merged 0
+Core_0_L1D_rq_to_cache 19673499
+Core_0_L1D_rq_full 0
+
+Core_0_L1D_wq_access 4093412
+Core_0_L1D_wq_forward 0
+Core_0_L1D_wq_merged 0
+Core_0_L1D_wq_to_cache 4093412
+Core_0_L1D_wq_full 0
+
+Core_0_L1D_pq_access 0
+Core_0_L1D_pq_forward 0
+Core_0_L1D_pq_merged 0
+Core_0_L1D_pq_to_cache 0
+Core_0_L1D_pq_full 0
+
+Core_0_L1D_acc_epochs 516721
+Core_0_L1D_acc_level_0 516721
+Core_0_L1D_acc_level_1 0
+Core_0_L1D_acc_level_2 0
+Core_0_L1D_acc_level_3 0
+Core_0_L1D_acc_level_4 0
+Core_0_L1D_acc_level_5 0
+Core_0_L1D_acc_level_6 0
+Core_0_L1D_acc_level_7 0
+Core_0_L1D_acc_level_8 0
+Core_0_L1D_acc_level_9 0
+
+Core_0_L1I_total_access 45981230
+Core_0_L1I_total_hit 45978928
+Core_0_L1I_total_miss 2302
+Core_0_L1I_loads 45981230
+Core_0_L1I_load_hit 45978928
+Core_0_L1I_load_miss 2302
+Core_0_L1I_RFOs 0
+Core_0_L1I_RFO_hit 0
+Core_0_L1I_RFO_miss 0
+Core_0_L1I_prefetches 0
+Core_0_L1I_prefetch_hit 0
+Core_0_L1I_prefetch_miss 0
+Core_0_L1I_writebacks 0
+Core_0_L1I_writeback_hit 0
+Core_0_L1I_writeback_miss 0
+Core_0_L1I_prefetch_requested 0
+Core_0_L1I_prefetch_dropped 0
+Core_0_L1I_prefetch_issued 0
+Core_0_L1I_prefetch_filled 0
+Core_0_L1I_prefetch_useful 0
+Core_0_L1I_prefetch_useless 0
+Core_0_L1I_prefetch_late 0
+Core_0_L1I_average_miss_latency 80.51216
+
+Core_0_L1I_rq_access 50000187
+Core_0_L1I_rq_forward 0
+Core_0_L1I_rq_merged 4018221
+Core_0_L1I_rq_to_cache 45981966
+Core_0_L1I_rq_full 0
+
+Core_0_L1I_wq_access 0
+Core_0_L1I_wq_forward 0
+Core_0_L1I_wq_merged 0
+Core_0_L1I_wq_to_cache 0
+Core_0_L1I_wq_full 0
+
+Core_0_L1I_pq_access 0
+Core_0_L1I_pq_forward 0
+Core_0_L1I_pq_merged 0
+Core_0_L1I_pq_to_cache 0
+Core_0_L1I_pq_full 0
+
+Core_0_L1I_acc_epochs 516721
+Core_0_L1I_acc_level_0 516721
+Core_0_L1I_acc_level_1 0
+Core_0_L1I_acc_level_2 0
+Core_0_L1I_acc_level_3 0
+Core_0_L1I_acc_level_4 0
+Core_0_L1I_acc_level_5 0
+Core_0_L1I_acc_level_6 0
+Core_0_L1I_acc_level_7 0
+Core_0_L1I_acc_level_8 0
+Core_0_L1I_acc_level_9 0
+
+Core_0_L2C_total_access 179713
+Core_0_L2C_total_hit 16053
+Core_0_L2C_total_miss 163660
+Core_0_L2C_loads 165362
+Core_0_L2C_load_hit 6665
+Core_0_L2C_load_miss 158697
+Core_0_L2C_RFOs 6690
+Core_0_L2C_RFO_hit 1738
+Core_0_L2C_RFO_miss 4952
+Core_0_L2C_prefetches 0
+Core_0_L2C_prefetch_hit 0
+Core_0_L2C_prefetch_miss 0
+Core_0_L2C_writebacks 7661
+Core_0_L2C_writeback_hit 7650
+Core_0_L2C_writeback_miss 11
+Core_0_L2C_prefetch_requested 0
+Core_0_L2C_prefetch_dropped 0
+Core_0_L2C_prefetch_issued 0
+Core_0_L2C_prefetch_filled 0
+Core_0_L2C_prefetch_useful 0
+Core_0_L2C_prefetch_useless 0
+Core_0_L2C_prefetch_late 0
+Core_0_L2C_average_miss_latency 35.80551
+
+Core_0_L2C_rq_access 172052
+Core_0_L2C_rq_forward 0
+Core_0_L2C_rq_merged 0
+Core_0_L2C_rq_to_cache 172052
+Core_0_L2C_rq_full 0
+
+Core_0_L2C_wq_access 7661
+Core_0_L2C_wq_forward 0
+Core_0_L2C_wq_merged 0
+Core_0_L2C_wq_to_cache 7661
+Core_0_L2C_wq_full 0
+
+Core_0_L2C_pq_access 0
+Core_0_L2C_pq_forward 0
+Core_0_L2C_pq_merged 0
+Core_0_L2C_pq_to_cache 0
+Core_0_L2C_pq_full 0
+
+Core_0_L2C_acc_epochs 516721
+Core_0_L2C_acc_level_0 516721
+Core_0_L2C_acc_level_1 0
+Core_0_L2C_acc_level_2 0
+Core_0_L2C_acc_level_3 0
+Core_0_L2C_acc_level_4 0
+Core_0_L2C_acc_level_5 0
+Core_0_L2C_acc_level_6 0
+Core_0_L2C_acc_level_7 0
+Core_0_L2C_acc_level_8 0
+Core_0_L2C_acc_level_9 0
+
+Core_0_LLC_total_access 169804
+Core_0_LLC_total_hit 140126
+Core_0_LLC_total_miss 29678
+Core_0_LLC_loads 158697
+Core_0_LLC_load_hit 132717
+Core_0_LLC_load_miss 25980
+Core_0_LLC_RFOs 4952
+Core_0_LLC_RFO_hit 1254
+Core_0_LLC_RFO_miss 3698
+Core_0_LLC_prefetches 0
+Core_0_LLC_prefetch_hit 0
+Core_0_LLC_prefetch_miss 0
+Core_0_LLC_writebacks 6155
+Core_0_LLC_writeback_hit 6155
+Core_0_LLC_writeback_miss 0
+Core_0_LLC_prefetch_requested 0
+Core_0_LLC_prefetch_dropped 0
+Core_0_LLC_prefetch_issued 0
+Core_0_LLC_prefetch_filled 0
+Core_0_LLC_prefetch_useful 0
+Core_0_LLC_prefetch_useless 0
+Core_0_LLC_prefetch_late 0
+Core_0_LLC_average_miss_latency 31.90838
+
+Core_0_LLC_rq_access 163649
+Core_0_LLC_rq_forward 0
+Core_0_LLC_rq_merged 0
+Core_0_LLC_rq_to_cache 163649
+Core_0_LLC_rq_full 0
+
+Core_0_LLC_wq_access 6155
+Core_0_LLC_wq_forward 0
+Core_0_LLC_wq_merged 0
+Core_0_LLC_wq_to_cache 6155
+Core_0_LLC_wq_full 0
+
+Core_0_LLC_pq_access 0
+Core_0_LLC_pq_forward 0
+Core_0_LLC_pq_merged 0
+Core_0_LLC_pq_to_cache 0
+Core_0_LLC_pq_full 0
+
+Core_0_LLC_acc_epochs 516800
+Core_0_LLC_acc_level_0 516800
+Core_0_LLC_acc_level_1 0
+Core_0_LLC_acc_level_2 0
+Core_0_LLC_acc_level_3 0
+Core_0_LLC_acc_level_4 0
+Core_0_LLC_acc_level_5 0
+Core_0_LLC_acc_level_6 0
+Core_0_LLC_acc_level_7 0
+Core_0_LLC_acc_level_8 0
+Core_0_LLC_acc_level_9 0
+
+Core_0_major_page_fault 0
+Core_0_minor_page_fault 911
+
+Channel_0_RQ_row_buffer_hit 18779
+Channel_0_RQ_row_buffer_miss 10899
+Channel_0_WQ_row_buffer_hit 0
+Channel_0_WQ_row_buffer_miss 204
+Channel_0_WQ_full 0
+Channel_0_dbus_congested 0
+
+avg_congested_cycle 0
+
+DRAM_bw_pochs 2067199
+DRAM_bw_level_0 2067199
+DRAM_bw_level_1 0
+DRAM_bw_level_2 0
+DRAM_bw_level_3 0
