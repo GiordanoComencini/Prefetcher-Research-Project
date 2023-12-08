@@ -32,7 +32,7 @@ extern uint32_t PAGE_TABLE_LATENCY, SWAP_LATENCY;
 #define DTLB_WQ_SIZE 32
 #define DTLB_PQ_SIZE 0
 #define DTLB_MSHR_SIZE 8
-#define DTLB_LATENCY 1
+#define DTLB_LATENCY 0
 
 // SECOND LEVEL TLB
 #define STLB_SET 1024
@@ -53,8 +53,8 @@ extern uint32_t PAGE_TABLE_LATENCY, SWAP_LATENCY;
 #define L1I_LATENCY 4
 
 // L1 DATA CACHE
-#define L1D_SET 64
-#define L1D_WAY 12
+#define L1D_SET 16
+#define L1D_WAY 8
 #define L1D_RQ_SIZE 64
 #define L1D_WQ_SIZE 64
 #define L1D_PQ_SIZE 8
@@ -62,7 +62,7 @@ extern uint32_t PAGE_TABLE_LATENCY, SWAP_LATENCY;
 #define L1D_LATENCY 5
 
 // L2 CACHE
-#define L2C_SET 1024
+#define L2C_SET 64
 #define L2C_WAY 8
 #define L2C_RQ_SIZE 32
 #define L2C_WQ_SIZE 32
@@ -167,7 +167,7 @@ class CACHE : public MEMORY {
             }
         }
 
-	total_miss_latency = 0;
+	total_miss_latency = 8;
 
         lower_level = NULL;
         extra_interface = NULL;

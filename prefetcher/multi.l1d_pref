@@ -6,6 +6,25 @@
 #include "stride.h"
 #include "ipcp_L1.h"
 
+#include "sms.h"
+#include "scooby.h"
+#include "next_line.h"
+#include "bop.h"
+#include "sandbox.h"
+#include "dspatch.h"
+#include "spp_dev2.h"
+#include "ppf_dev.h"
+#include "mlop.h"
+#include "bingo.h"
+#include "stride.h"
+#include "ipcp_L2.h"
+#include "ampm.h"
+#include "streamer.h"
+#include "pref_power7.h"
+#include "spt_v2.h"
+#include "sfp.h"
+#include "sp_ghb.h"
+
 using namespace std;
 
 namespace knob
@@ -39,6 +58,46 @@ void CACHE::l1d_prefetcher_initialize()
 			IPCP_L1 *pref_ipcp_l1 = new IPCP_L1(knob::l1d_prefetcher_types[index], this);
 			l1d_prefetchers.push_back(pref_ipcp_l1);
 		}
+		// GHB BEGIN
+    else if(!knob::l1d_prefetcher_types[index].compare("sp_ghb"))
+		{
+			cout << "adding L1D_PREFETCHER: GHB" << endl;
+			sp_ghb_prefetcher *ghb = new sp_ghb_prefetcher(knob::l1d_prefetcher_types[index]);
+			l1d_prefetchers.push_back(ghb);
+		}
+		// GHB END
+		// BINGO BEGIN
+    else if(!knob::l1d_prefetcher_types[index].compare("bingo"))
+		{
+			cout << "adding L1D_PREFETCHER: BIGNO" << endl;
+			Bingo *bingo_pref = new Bingo(knob::l1d_prefetcher_types[index], this);
+			l1d_prefetchers.push_back(bingo_pref);
+		}
+		// BINGO END
+		// BINGO BEGIN
+    else if(!knob::l1d_prefetcher_types[index].compare("scooby"))
+		{
+			cout << "adding L1D_PREFETCHER: PYTHIA" << endl;
+			Scooby *scooby_pref = new Scooby(knob::l1d_prefetcher_types[index]);
+			l1d_prefetchers.push_back(scooby_pref);
+		}
+		// BINGO END
+		// SPT_V2 BEGIN
+    else if(!knob::l1d_prefetcher_types[index].compare("spt_v2"))
+		{
+			cout << "adding L1D_PREFETCHER: spt_v2 " << endl;
+			spt_prefetcher *spt_pref = new spt_prefetcher(knob::l1d_prefetcher_types[index]);
+			l1d_prefetchers.push_back(spt_pref);
+		}
+		// SPT_V2 END
+		// SFP BEGIN
+    else if(!knob::l1d_prefetcher_types[index].compare("sfp"))
+		{
+			cout << "adding L1D_PREFETCHER: sfp " << endl;
+			SFP_prefetcher *sfp_pref = new SFP_prefetcher(knob::l1d_prefetcher_types[index]);
+			l1d_prefetchers.push_back(sfp_pref);
+		}
+		// SFP END
 		else
 		{
 			cout << "unsupported prefetcher type " << knob::l1d_prefetcher_types[index] << endl;

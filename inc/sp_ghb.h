@@ -1,4 +1,5 @@
 #include <deque>
+#include <algorithm>
 #include "prefetcher.h"
 using namespace std;
 
