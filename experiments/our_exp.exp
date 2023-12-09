@@ -1,23 +1,19 @@
 
 
 
-BASE = --warmup_instructions=100000 --simulation_instructions=500000
+BASE = --warmup_instructions=1000000 --simulation_instructions=5000000
 NOPREF = --config=$(PYTHIA_HOME)/config/nopref.ini
-STRIDE = --l2c_prefetcher_types=stride --config=$(PYTHIA_HOME)/config/stride.ini
-SPP_DEV2 = --l2c_prefetcher_types=spp_dev2 --config=$(PYTHIA_HOME)/config/spp_dev2.ini
-MLOP = --l2c_prefetcher_types=mlop --config=$(PYTHIA_HOME)/config/mlop.ini
 BINGO = --l2c_prefetcher_types=bingo --config=$(PYTHIA_HOME)/config/bingo.ini
-DSPATCH = --l2c_prefetcher_types=dspatch --config=$(PYTHIA_HOME)/config/dspatch.ini
-SPP_PPF_DEV = --l2c_prefetcher_types=spp_ppf_dev --config=$(PYTHIA_HOME)/config/spp_ppf_dev.ini
 PYTHIA = --l2c_prefetcher_types=scooby --config=$(PYTHIA_HOME)/config/pythia.ini
 SPT_V2 = --l2c_prefetcher_types=spt_v2 --config=$(PYTHIA_HOME)/config/spt_v2.ini
-SFP = --l2c_prefetcher_types=sfp --config=$(PYTHIA_HOME)/config/sfp.ini
 SP_GHB = --l2c_prefetcher_types=sp_ghb --config=$(PYTHIA_HOME)/config/sp_ghb.ini
+SFP = --l2c_prefetcher_types=sfp --config=$(PYTHIA_HOME)/config/sfp.ini
 
 nopref                                          $(BASE) $(NOPREF)
 bingo                                           $(BASE) $(BINGO)
 pythia                                          $(BASE) $(PYTHIA)
 spt_v2						                    $(BASE) $(SPT_V2)
+sp_ghb                                          $(BASE) $(SP_GHB)
 sfp                                             $(BASE) $(SFP)
 sp_ghb                                          $(BASE) $(SP_GHB)
 
