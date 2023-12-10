@@ -1,3 +1,7 @@
+NAME=638.imagick_s-10316B.champsimtrace
+TRACE=$(PYTHIA_HOME)/traces/638.imagick_s-10316B.champsimtrace.xz
+KNOBS=
+
 NAME=482.sphinx3-1100B.champsimtrace
 TRACE=$(PYTHIA_HOME)/traces/482.sphinx3-1100B.champsimtrace.xz
 KNOBS=
@@ -9,4 +13,3 @@ KNOBS=
 NAME=605.mcf_s-472B
 TRACE=$(PYTHIA_HOME)/traces/605.mcf_s-472B.champsimtrace.xz
 KNOBS=
-
