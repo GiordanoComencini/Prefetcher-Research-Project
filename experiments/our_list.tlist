@@ -1,7 +1,3 @@
-NAME=482.sphinx3-417B.champsimtrace
-TRACE=$(PYTHIA_HOME)/traces/482.sphinx3-417B.champsimtrace.xz
-KNOBS=
-
 NAME=482.sphinx3-1100B.champsimtrace
 TRACE=$(PYTHIA_HOME)/traces/482.sphinx3-1100B.champsimtrace.xz
 KNOBS=
